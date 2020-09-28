@@ -86,10 +86,7 @@ var cmd = &cobra.Command{
 			c, ok := kinds[ks]
 			kinds[ks] = c + 1
 
-			fName := fmt.Sprintf("%s_%d.yaml", strcase.ToSnake(ks), c)
-			if c == 0 {
-				fName = fmt.Sprintf("%s.yaml", strcase.ToSnake(ks))
-			}
+			fName := fmt.Sprintf("%02d_%s_%d.yaml", i, strcase.ToSnake(ks), c+1)
 
 			log.Println("Writing file:", fName)
 
